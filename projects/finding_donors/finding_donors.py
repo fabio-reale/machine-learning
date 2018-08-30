@@ -5,10 +5,10 @@ from time import time
 #from IPython.display import display # Allows the use of display() for DataFrames
 
 # Import supplementary visualization code visuals.py
-import visuals as vs
+#import visuals as vs
 
 # Pretty display for notebooks
-#get_ipython().run_line_magic('matplotlib', 'inline')
+# get_ipython().run_line_magic('matplotlib', 'inline')
 
 # Load the Census dataset
 data = pd.read_csv("census.csv")
@@ -42,7 +42,7 @@ income_raw = data['income']
 features_raw = data.drop('income', axis = 1)
 
 # Visualize skewed continuous features of original data
-vs.distribution(data)
+#vs.distribution(data)
 
 
 # Log-transform the skewed features
@@ -51,7 +51,7 @@ features_log_transformed = pd.DataFrame(data = features_raw)
 features_log_transformed[skewed] = features_raw[skewed].apply(lambda x: np.log(x + 1))
 
 # Visualize the new log distributions
-vs.distribution(features_log_transformed, transformed = True)
+#vs.distribution(features_log_transformed, transformed = True)
 
 
 # Import sklearn.preprocessing.StandardScaler
