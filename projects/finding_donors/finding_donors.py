@@ -168,7 +168,6 @@ def train_predict(learner, sample_size, X_train, y_train, X_test, y_test):
        - y_test: income testing set
     '''
 
-    # declares results as a dictionary
     results = {}
 
     # TODO: Fit the learner to the training data using slicing with 'sample_size' using .fit(training_features[:], training_labels[:])
@@ -205,7 +204,6 @@ def train_predict(learner, sample_size, X_train, y_train, X_test, y_test):
 
     # Success
     print("{} trained on {} samples.".format(learner.__class__.__name__, sample_size))
-    print(predictions_train)
 
     # Return the results
     return results
