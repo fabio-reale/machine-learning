@@ -224,15 +224,15 @@ def train_predict(learner, sample_size, X_train, y_train, X_test, y_test):
 
 
 # TODO: Import the three supervised learning models from sklearn
+# TODO: Import the three supervised learning models from sklearn
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import AdaBoostClassifier
 
 # TODO: Initialize the three models
-clf_A = SVC()
-clf_B = DecisionTreeClassifier()
-clf_C = AdaBoostClassifier()
+clf_A = DecisionTreeClassifier()
+clf_B = AdaBoostClassifier()
+clf_C = SVC()
 
 # TODO: Calculate the number of samples for 1%, 10%, and 100% of the training data
 # HINT: samples_100 is the entire training set i.e. len(y_train)
@@ -241,7 +241,7 @@ clf_C = AdaBoostClassifier()
 samples_100 = len(y_train)
 samples_10 = samples_100//10
 samples_1 = samples_100//100
-"""
+
 # Collect results on the learners
 results = {}
 for clf in [clf_A, clf_B, clf_C]:
@@ -251,9 +251,15 @@ for clf in [clf_A, clf_B, clf_C]:
         results[clf_name][i] =         train_predict(clf, samples, X_train, y_train, X_test, y_test)
 
 # Run metrics visualization for the three supervised learning models chosen
-vs.evaluate(results, accuracy, fscore)
+# vs.evaluate(results, accuracy, fscore)
+# Seting all SVC time values to 0.0. It is already clear it takes a very long time to train and predict using SVC
+#for j, metric in enumerate(["train_time", "pred_time"]):
+#        for i in np.arange(3):
+#            results["SVC"][i][metric] = 0.0
 
 
+
+"""
 # ----
 # ## Improving Results
 # In this final section, you will choose from the three supervised learning models the *best* model to use on the student data. You will then perform a grid search optimization for the model over the entire training set (`X_train` and `y_train`) by tuning at least one parameter to improve upon the untuned model's F-score.
