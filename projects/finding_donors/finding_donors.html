@@ -13260,7 +13260,11 @@ F-score on testing data: 0.6987
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> It fares well, specially when you consider that the model on reduced data was not optimized for the reduced data. My next step would be to optimize the model for the reduced data and then recompare.</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>The final model's F-score and accuracy score on the reduced data fares well, specially when you consider that the model on reduced data was not optimized for the reduced data. My next step would be to optimize the model for the reduced data and then recompare.</li>
+<li>If training time was a factor I would consider using the reduced data. The F-score on testing data is approximately the same as the testing data with the full dataset before optimization. It is reasonable to assume that the optimal parameters for the reduced set are different and that optimization step would take those scores very close to what was accomplished with the full set.</li>
+</ul>
 
 </div>
 </div>
