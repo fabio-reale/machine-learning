@@ -13169,6 +13169,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 <p>I decided to use a different criterion for the determination of outliers. Because some of the categories present high correlation to one another it becomes more likely to find points with high values on both of the highly correlated categories, so we might throw away good data assuming some point to be a super outlier when it isn't.</p>
 <p>There are two ways to deal with this (that I can think of). The first is to apply a more conservative treshold for outliers, 2.0 of the interquartile range for instace. The second is to apply multivariate outlier detection using the Mahalanobis distance, which would allow us to use 1.5 interquartile range, but on an range that takes into account the internal correlation structure of the data.</p>
 <p>I chose the former for two main reasons, it is simpler (both in implementation and computation) and makes less assumptions on the data.</p>
+<p>obs: I have previously studied some multivariate statistics. The main reference used there was <a href="https://books.google.com.br/books?id=YMyTPwAACAAJ&amp;printsec=frontcover&amp;dq=editions:ISBN0124712509">Multivariate Analysis (Probability and mathematical statistics)</a>, by Kantilal V. Mardia, John T. Kent, John M. Bibby, Susan Holmes.</p>
 
 </div>
 </div>
